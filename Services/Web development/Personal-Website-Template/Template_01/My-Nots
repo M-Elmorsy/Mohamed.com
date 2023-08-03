@@ -1,0 +1,18 @@
+/*
+1- put the code in the lines like this
+1- clear Your css files 
+ */
+
+
+/* line 3086 in style.css of template 1  */
+.s-header.sticky.scrolling {
+    opacity   : 1;
+    visibility: visible;
+}
+
+/* line 3695 in style.css of template 1  */
+.no-js .s-header__inner,
+.ss-show .s-header__inner {
+    transition-delay: 1.5s;
+}
+
