@@ -1,0 +1,187 @@
+header{
+    position: relative;
+  }
+  .presentation {
+    height: calc(100vh - 200px);
+  }
+  h1.presentation-heading  {
+    margin: 17px auto 80px;
+    text-align: center;
+    padding: 30px 0 10px;
+    font-size: 25px;
+    font-family: fantasy;
+    border-bottom: 2px solid #ccc;
+    width: fit-content;
+    color: var(--main-color);
+    position: relative;
+    animation: changeColor 3s linear infinite alternate-reverse;
+  }
+  .presentation .data {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 60px;
+    padding: 0px 0 100px;
+  }
+  .presentation .image {
+    overflow: hidden;
+    background-color: #ffffff;
+    padding: 20px;
+    margin: 0 0 30px;
+    border-radius: 60px 0;
+    animation: changeBackgroundColor 3s linear infinite alternate-reverse;
+  }
+  .presentation .image img {
+    width: 500px;
+    max-width: 100%;
+    transition: var(--main-transition);
+    transform: scale(1.2);
+  }
+  .presentation:hover img {
+    transform: scale(1) rotate(360deg);
+  }
+  .preview {
+    padding-left: 33px;
+    background: #000;
+    position: relative;
+    transition: var(--main-transition);
+    font-size: 25px;
+  }
+  .preview::before {
+    content: "\f06e";
+    position: absolute;
+    font-family: "FontAwesome";
+    font-weight: 900;
+    top: 50%;
+    transform: translateY(-50%);
+    left: 5px;
+    font-size: 20px;
+    color: var(--main-color);
+  }
+  .card{
+    overflow: hidden;
+    border-radius: 15%;
+  }
+  /* Start Contact Media */
+  .contact-social {
+    position: relative;
+    padding: 0 0 0 60px;
+    border-left: 2px solid #ccc;
+  }
+  @media (max-width: 991px) {
+    .contact-social {
+      padding: 60px 0 0 0;
+      border-top: 2px solid #ccc;
+      border-left: none;
+    }
+  }
+  .contact-social .box {
+    padding-left: 70px;
+    transition: var(--main-transition);
+  }
+  .contact-social .box:hover {
+    background-color: #e5e5e5;
+  }
+  .contact-social .box i {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 52px;
+    transition: 0.3s;
+  }
+  .contact-social .box:hover i {
+    transform: rotate(5deg) scale(1.1);
+  }
+  .contact-social .box:hover span {
+    color: var(--main-color);
+  }
+  .contact-social .twitter {
+    background-color: rgb(29 161 242 / 20%);
+    color: #1da1f2;
+  }
+  .contact-social .twitter i,
+  .contact-social .twitter a {
+    background-color: #1da1f2;
+  }
+  .contact-social .facebook {
+    background-color: rgb(24 119 242 / 20%);
+    color: #1da1f2;
+  }
+  .contact-social .facebook i,
+  .contact-social .facebook a {
+    background-color: #1877f2;
+  }
+  .contact-social .linkedin {
+    background-color: rgb(0 119 181 / 20%);
+    color: #0077b5;
+  }
+  .contact-social .linkedin i,
+  .contact-social .linkedin a {
+    background-color: #0077b5;
+  }
+  .contact-social .whatsapp {
+    background-color: rgb(0 128 0 / 20%);
+  }
+  .contact-social .whatsapp i,
+  .contact-social .whatsapp a {
+    background-color: green;
+  }
+  .contact-social a {
+    display: block;
+    width: 75px;
+    text-align: center;
+    font-weight: bold;
+  }
+  /* End Social Media */
+  /* Start Component */
+  .main-heading h2{
+  font-weight: bold;
+  text-transform: capitalize !important;
+  font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+  }
+  /* End Component */
+  
+  @keyframes changeBackgroundColor {
+    0% {
+      background-color: #3345ff;
+    }
+    25% {
+      background-color: #00a8ff;
+    }
+    50% {
+      background-color: #1da1f2;
+    }
+    75% {
+      background-color: #00d3ff;
+    }
+    100% {
+      background-color: #03edd7;
+    }
+  }
+  @keyframes changeColor {
+    0% {
+      color: #3345ff;
+    }
+    25% {
+      color: #00a8ff;
+    }
+    50% {
+      color: #1da1f2;
+    }
+    75% {
+      color: #00d3ff;
+    }
+    100% {
+      color: #03edd7;
+    }
+  }
+  
+
+
+
+
+
+
+
+
