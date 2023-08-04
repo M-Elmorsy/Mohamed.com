@@ -1,0 +1,65 @@
+/* Start Variables */
+:root {
+    --main-animation: 0.7s linear;
+    --main-transition: 0.3s;
+    --blue-color: #0075ff;
+    --blue-alt-color: #0d69d5;
+    --orange-color: #f59e0b;
+    --green-color: #22c55e;
+    --red-color: #f44336;
+    --grey-color: #888;
+}
+  /* End Variables */
+.s-intro{
+    background-attachment: fixed;
+    background-size: cover;
+    background-image: url(../images/background/space.png);
+}
+.s-intro::before{
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: lch(0 0 0 / 0.5);
+}
+.s-header__inner {
+    
+}
+.s-header__block {
+
+}
+.s-header__logo{
+
+}
+.s-header__nav{
+
+}
+.s-header__menu-links{
+
+}
+.s-header__menu-links li{
+
+}
+.s-header__menu-links li a{
+
+}
+.s-header__contact{
+
+}
+.s-header__contact .s-header__contact-btn{
+    background: rgb(0 117 255 / 10%);
+    color: white;
+    font-family: cursive;
+    transition: var(--main-transition);
+}
+.s-header__contact .s-header__contact-btn:hover{
+color: white;
+transform: scale(1.1);
+}
+.ss-show .s-intro__content-title {
+	font-family: monospace;
+    font-size: 61px;
+}
+

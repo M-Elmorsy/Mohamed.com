@@ -62,9 +62,9 @@ header{
   font-size: 20px;
   color: var(--main-color);
 }
-.card{
-  overflow: hidden;
-  border-radius: 15%;
+.card , .card img{
+    border-radius: 100%;
+    overflow: hidden;
 }
 /* Start Contact Media */
 .contact-social {
