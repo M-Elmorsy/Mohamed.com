@@ -10,9 +10,9 @@
     <link rel="stylesheet" href="../../css/style.css" />
     <link rel="stylesheet" href="../../css/framework.css" />
     <!-- End CSS files -->
+    <!-- js -->
+    <script src="../../js/file.js"></script>
     <title>Web Development</title>
-    <!-- PHP files -->
-
     <link
       rel="icon"
       type="image/svg"
@@ -103,16 +103,17 @@
       </div>
     </div>
     <!-- End Services -->
-<!-- Start CONTACT -->
-<div class="contact">
-  <div class="main-heading">
-    <h2>contact us</h2>
-  </div>
-  <div class="container">
-    <div class="content align-center gap-30 col-mobile">
-      <form class="m-0 flex1" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>" method="POST">
+    <!-- Start CONTACT  -->
+    <div class="contact">
+      <div class="main-heading">
+        <h2>contact us</h2>
+      </div>
+      <div class="container">
+        <div class="content align-center gap-30 col-mobile">
+      <!-- start form -->
+      <form class="m-0 flex1" id="myForm">
         <input type="text" placeholder="Your name" name="name" id="name" />
-        <input type="email" placeholder="Your Email" name="mail" id="mail" />
+        <input type="email" placeholder="Your Email" name="email" id="email" />
         <textarea
           name="message"
           placeholder="Your Message"
@@ -125,45 +126,54 @@
           type="submit"
           value="Send Message"
           name="submit"
-          id="submit"
+          id="submitButton"
         />
-      </form>
-      <div class="info m-0">
-        <div class="up">
-          <h4>GET IN TOUCH</h4>
-          <span
-            ><i
-              class="mr-5 fa-brands fa-whatsapp fa-fade fa-lg"
-              style="color: #12ff5b"
-            ></i>
-            +20 1028 211 712</span
-          >
-        </div>
-        <div class="down">
-          <h4>WHERE WE ARE</h4>
-          <p>Minyet El-Nasr, Ad Daqahliyah, Egypt</p>
+    </form>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            const form = document.getElementById("myForm");
+            const submitButton = document.getElementById("submitButton");
+
+            form.addEventListener("submit", function(event) {
+                event.preventDefault(); // Prevent the default form submission
+
+                const name = document.getElementById("name").value;
+                const email = document.getElementById("email").value;
+                const message = document.getElementById("message").value;
+
+                // Send the message to the specified email address
+                const emailAddress = "mohamedelmorsy5611@gmail.com";
+                const subject = encodeURIComponent("New Message from " + name);
+                const body = encodeURIComponent(message);
+                const mailtoLink = `mailto:${emailAddress}?subject=${subject}&body=${body}`;
+
+                // Open the default email client with the composed email
+                window.location.href = mailtoLink;
+            });
+        });
+    </script>
+      <!-- End form -->
+          <div class="info m-0">
+            <div class="up">
+              <h4>GET IN TOUCH</h4>
+              <span
+                ><i
+                  class="mr-5 fa-brands fa-whatsapp fa-fade fa-lg"
+                  style="color: #12ff5b"
+                ></i>
+                +20 1028 211 712</span
+              >
+            </div>
+            <div class="down">
+              <h4>WHERE WE ARE</h4>
+              <p>Minyet El-Nasr, Ad Daqahliyah, Egypt</p>
+            </div>
+          </div>
         </div>
       </div>
     </div>
-  </div>
-</div>
-<!-- End CONTACT -->
-
-<?php
-if ($_SERVER["REQUEST_METHOD"] == "POST") {
-    $name = $_POST["name"];
-    $email = $_POST["mail"];
-    $message = $_POST["message"];
-
-    $to = "your-email@example.com";  // Replace with your email address
-    $subject = "New Contact Form Submission";
-    $headers = "From: $email\r\n" . "Reply-To: $email\r\n";
-
-    mail($to, $subject, $message, $headers);
-}
-?>
-
-
+    <!-- End CONTACT  -->
     <!-- Start Footer -->
     <footer id="Contact">
       <div class="container">

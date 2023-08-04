@@ -1,4 +1,4 @@
-
+// lazy load
 const images = document.querySelectorAll('img');
 const observerOptions = {
   root: null,
@@ -22,3 +22,7 @@ const imageObserver = new IntersectionObserver((entries, observer) => {
 images.forEach(image => {
   imageObserver.observe(image);
 });
+
+
+
+
