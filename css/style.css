@@ -728,10 +728,10 @@ footer .box .social li a.benance:hover {
 .video .go-down {
   color: var(--main-color);
   position: absolute;
-  bottom: 220px;
+  bottom: 200px;
   left: 50%;
   transform: translateX(-50%);
-  animation: bounce 1s infinite;
+  animation: bounce220 1s infinite;
   height: 50px;
   width: 50px;
   border-radius: 50%;
@@ -740,6 +740,15 @@ footer .box .social li a.benance:hover {
   align-items: center;
   justify-content: center;
   transition: var(--main-transition);
+}
+@keyframes bounce220 {
+  0%,
+  100% {
+    bottom: 200px;
+  }
+  50% {
+    bottom: 190px;
+  }
 }
 .video .go-down:hover {
   border-color: var(--main-color);
