@@ -11,6 +11,8 @@
     <link rel="stylesheet" href="../../css/framework.css" />
     <!-- End CSS files -->
     <title>Web Development</title>
+    <!-- PHP files -->
+
     <link
       rel="icon"
       type="image/svg"
@@ -101,51 +103,67 @@
       </div>
     </div>
     <!-- End Services -->
-    <!-- Start CONTACT  -->
-    <div class="contact">
-      <div class="main-heading">
-        <h2>contact us</h2>
-      </div>
-      <div class="container">
-        <div class="content align-center gap-30 col-mobile">
-          <form class="m-0 flex1">
-            <input type="text" placeholder="Your name" name="" id="" />
-            <input type="email" placeholder="Your Email" name="mail" id="" />
-            <textarea
-              name=""
-              placeholder="Your Massage"
-              id=""
-              cols="30"
-              rows="10"
-            ></textarea>
-            <input
-              class="bg-blue c-white fw-bold w-fit ml-auto pointer hover-color"
-              type="submit"
-              value="Send Massage"
-              name=""
-              id=""
-            />
-          </form>
-          <div class="info m-0">
-            <div class="up">
-              <h4>GET IN TOUCH</h4>
-              <span
-                ><i
-                  class="mr-5 fa-brands fa-whatsapp fa-fade fa-lg"
-                  style="color: #12ff5b"
-                ></i>
-                +20 1028 211 712</span
-              >
-            </div>
-            <div class="down">
-              <h4>WHERE WE ARE</h4>
-              <p>Minyet El-Nasr, Ad Daqahliyah, Egypt</p>
-            </div>
-          </div>
+<!-- Start CONTACT -->
+<div class="contact">
+  <div class="main-heading">
+    <h2>contact us</h2>
+  </div>
+  <div class="container">
+    <div class="content align-center gap-30 col-mobile">
+      <form class="m-0 flex1" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>" method="POST">
+        <input type="text" placeholder="Your name" name="name" id="name" />
+        <input type="email" placeholder="Your Email" name="mail" id="mail" />
+        <textarea
+          name="message"
+          placeholder="Your Message"
+          id="message"
+          cols="30"
+          rows="10"
+        ></textarea>
+        <input
+          class="bg-blue c-white fw-bold w-fit ml-auto pointer hover-color"
+          type="submit"
+          value="Send Message"
+          name="submit"
+          id="submit"
+        />
+      </form>
+      <div class="info m-0">
+        <div class="up">
+          <h4>GET IN TOUCH</h4>
+          <span
+            ><i
+              class="mr-5 fa-brands fa-whatsapp fa-fade fa-lg"
+              style="color: #12ff5b"
+            ></i>
+            +20 1028 211 712</span
+          >
+        </div>
+        <div class="down">
+          <h4>WHERE WE ARE</h4>
+          <p>Minyet El-Nasr, Ad Daqahliyah, Egypt</p>
         </div>
       </div>
     </div>
-    <!-- End CONTACT  -->
+  </div>
+</div>
+<!-- End CONTACT -->
+
+<?php
+if ($_SERVER["REQUEST_METHOD"] == "POST") {
+    $name = $_POST["name"];
+    $email = $_POST["mail"];
+    $message = $_POST["message"];
+
+    $to = "your-email@example.com";  // Replace with your email address
+    $subject = "New Contact Form Submission";
+    $headers = "From: $email\r\n" . "Reply-To: $email\r\n";
+
+    mail($to, $subject, $message, $headers);
+}
+?>
+
+
     <!-- Start Footer -->
     <footer id="Contact">
       <div class="container">
